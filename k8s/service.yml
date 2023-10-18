@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: earthpulse-be-app-service
+  labels:
+    app: earthpulse-be-app
+spec:
+  selector:
+    app: earthpulse-be-app
+  ports:
+  - name: http
+    port: 80  
+    targetPort: http-be-svc  
+    protocol: TCP
+  type: NodePort

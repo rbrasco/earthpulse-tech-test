@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: earthpulse-be-app-deployment
+  labels:
+    app: earthpulse-be-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: earthpulse-be-app
+  template:
+    metadata:
+      labels:
+        app: earthpulse-be-app
+    spec:
+      containers:
+      - name: earthpulse-be-app
+        image: earthpulse-be:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000
+          name: http-be-svc
