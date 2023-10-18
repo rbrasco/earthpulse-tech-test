@@ -1,4 +1,4 @@
-# Use an official Python runtime as a parent image
+# Use an official GDAL runtime as a parent image
 FROM ghcr.io/osgeo/gdal:ubuntu-small-latest 
 
 # Set the working directory in the container
