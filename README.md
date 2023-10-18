@@ -5,7 +5,7 @@ This guide provides instructions on how to set up and run the FastAPI backend ap
 ## Prerequisites
 
 - Python 3.10
-- Docker (if you plan to run the application in a container)
+- Docker
 
 ## Setup
 
