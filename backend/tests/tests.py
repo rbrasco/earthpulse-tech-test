@@ -1,17 +1,13 @@
 from PIL import Image
 from io import BytesIO
 from src.main import open_image, create_thumbnail
-from tempfile import SpooledTemporaryFile
 
 test_image = "./tests/S2L2A_2022-06-09.tiff"
 
 # Create a BytesIO object for testing
 def create_test_image():
     with open(test_image, "rb") as f:
-        spooled = SpooledTemporaryFile(max_size=1e9)
-        spooled.write(f.read())
-    spooled.seek(0)
-    return BytesIO(spooled.read())
+        return BytesIO(f.read())
 
 # Test case for the get_image_attributes endpoint
 def test_get_image_attributes():

@@ -6,6 +6,7 @@ This guide provides instructions on how to set up and run the FastAPI backend ap
 
 - Python 3.10
 - Docker
+- GDAL
 
 ## Setup
 
@@ -19,6 +20,13 @@ This guide provides instructions on how to set up and run the FastAPI backend ap
 
    ```bash
    cd backend
+   ```
+
+3. Create a venv for the project.
+
+   ```bash
+   python3.10 -m venv .venv
+   . .venv/bin/activate
    ```
 
 3. Install the required Python packages.
@@ -128,6 +136,7 @@ To deploy and run the FastAPI backend application in a Kubernetes cluster using 
 6. Build the Docker image with the Minikube Docker daemon. This step ensures that the image is available within the Minikube cluster.
 
    ```bash
+   cd ../backend
    docker build -t earthpulse-be -f Dockerfile .
    ```
 
@@ -171,6 +180,6 @@ In a production environment, monitoring your application is crucial to ensure it
 
 ## Scalability
 
-In production, applications often face varying levels of traffic. To handle increased load and provide high availability, you can scale your application by adjusting the number of replicas in your deployment. Kubernetes makes it easy to scale your application up or down dynamically, allowing you to distribute incoming requests across multiple instances of your application.
+In a production environment, applications often face varying levels of traffic. To handle increased load and provide high availability, you can scale your application by adjusting the number of replicas in your deployment. Kubernetes makes it easy to scale your application up or down dynamically, allowing you to distribute incoming requests across multiple instances of your application.
 
 For high scalability, you can also consider implementing an Ingress resource. An Ingress resource acts as an entry point for your cluster and provides a way to route external HTTP and HTTPS traffic to different services within your Kubernetes cluster. By configuring Ingress rules, you can efficiently manage and route traffic to different services or replicas of your application, allowing you to achieve high scalability and load balancing.
