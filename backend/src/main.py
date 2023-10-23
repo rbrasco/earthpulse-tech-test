@@ -76,7 +76,7 @@ def create_thumbnail(file, resolution=100):
     summary="Root Endpoint",
     description="A simple root endpoint for testing the FastAPI application.")
 async def root():
-    return {"message": "Hello from EarthPulse BE!"}
+    return {"message": "Hello from FastApi Backend!"}
 
 
 # Endpoint to get image attributes

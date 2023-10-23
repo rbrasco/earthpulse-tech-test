@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: earthpulse-be-app-deployment
+  name: backend-app-deployment
   labels:
-    app: earthpulse-be-app
+    app: backend-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: earthpulse-be-app
+      app: backend-app
   template:
     metadata:
       labels:
-        app: earthpulse-be-app
+        app: backend-app
     spec:
       containers:
-      - name: earthpulse-be-app
-        image: earthpulse-be:latest
+      - name: backend-app
+        image: backend:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 8000

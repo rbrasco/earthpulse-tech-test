@@ -64,13 +64,13 @@ If you want to run the application inside a Docker container, follow these steps
 1. Build a Docker image for the application using the provided Dockerfile.
 
    ```bash
-   docker build -t earthpulse-be -f Dockerfile .
+   docker build -t backend -f Dockerfile .
    ```
 
 2. Run the Docker container, exposing port 8000 on your local machine.
 
    ```bash
-   docker run -p 8000:8000 earthpulse-be
+   docker run -p 8000:8000 backend
    ```
 
 The application will be accessible at `http://localhost:8000`.
@@ -137,7 +137,7 @@ To deploy and run the FastAPI backend application in a Kubernetes cluster using 
 
    ```bash
    cd ../backend
-   docker build -t earthpulse-be -f Dockerfile .
+   docker build -t backend -f Dockerfile .
    ```
 
 7. Wait for the Kubernetes pods to see and use the image. You can check the status of the pods by running:
@@ -151,7 +151,7 @@ To deploy and run the FastAPI backend application in a Kubernetes cluster using 
 8. Once the pods are running, you can open a Minikube service to access the application:
 
    ```bash
-   minikube service earthpulse-be-app-service
+   minikube service backend-app-service
    ```
 
    This command will open the service in your default web browser. If you prefer to use a different browser, you can specify it as an argument to the command.
